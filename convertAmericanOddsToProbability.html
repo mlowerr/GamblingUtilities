@@ -1,29 +1,32 @@
 <HTML>
-   <HEAD>
-      <TITLE>Ameican Odds To Probability Conversion</TITLE>
-      <SCRIPT type="text/javascript">
-         function calculateOdds() {
-            odds = parseInt(document.getElementById("input").value);
-            result = odds <= 0 ? calculateNegativeOdds(odds) : calculatePositiveOdds(odds);
-            document.getElementById("result").valueAsNumber = result;
-         }
-         
-         function calculateNegativeOdds(odds) {
-            odds *= -1;
-            return (odds / (odds+100)) * 100;
-         }
-         
-         function calculatePositiveOdds(odds) {
-             return (100 / (odds+100)) * 100;
-         }         
-      </SCRIPT>
-   </HEAD>
-   <BODY>
-      <LABEL FOR="input">Odds: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </LABEL>
-      <INPUT TYPE="NUMBER" ID="input"> 
-      <BUTTON ID="calculate" onclick="calculateOdds()">Calculate</BUTTON>
-      <BR>
-      <LABEL FOR="result">Probability: </LABEL>
-      <INPUT TYPE="NUMBER" ID="result">
-   </BODY>
+
+<HEAD>
+   <TITLE>Ameican Odds To Probability Conversion</TITLE>
+   <SCRIPT type="text/javascript">
+      function calculateOdds() {
+         odds = parseInt(document.getElementById("input").value);
+         result = odds <= 0 ? calculateNegativeOdds(odds) : calculatePositiveOdds(odds);
+         document.getElementById("result").valueAsNumber = result;
+      }
+
+      function calculateNegativeOdds(odds) {
+         odds *= -1;
+         return (odds / (odds + 100)) * 100;
+      }
+
+      function calculatePositiveOdds(odds) {
+         return (100 / (odds + 100)) * 100;
+      }         
+   </SCRIPT>
+</HEAD>
+
+<BODY>
+   <LABEL FOR="input">Odds: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </LABEL>
+   <INPUT TYPE="NUMBER" ID="input">
+   <BUTTON ID="calculate" onclick="calculateOdds()">Calculate</BUTTON>
+   <BR>
+   <LABEL FOR="result">Probability: </LABEL>
+   <INPUT TYPE="NUMBER" ID="result">%
+</BODY>
+
 </HTML>
